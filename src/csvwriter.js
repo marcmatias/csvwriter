@@ -1,6 +1,6 @@
 /**
  * Generate a CSV file data
- * 
+ *
  * @param  {Array} header - Array with header values
  * @param {Array} rows - Array with rows values
  */
@@ -12,7 +12,7 @@ export class CsvWriter {
 
     /**
      * Set a new row to table
-     * 
+     *
      * @param  {Array} row - Adding a new row
      */
     addRow(row) {
@@ -21,7 +21,7 @@ export class CsvWriter {
 
     /**
      * Set new rows to table
-     * 
+     *
      * @param  {Array} rows - Adding new rows
      */
     addRows(rows) {
@@ -53,7 +53,7 @@ export class CsvWriter {
 
     /**
      * Create a csv line
-     * 
+     *
      * @param  {Array} value - Array of values
      */
     _createCsvLine(row) {
