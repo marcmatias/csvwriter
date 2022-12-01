@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example</title>
+    <style>
+      .main {
+        padding: 1rem 2rem;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 14px;
+      }
+
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <section class="main">
+      <h1>Download table data as CSV example</h1>
+      <p>Click in download button to get CSV file data.</p>
+
+      <table> <!-- Populated by JS --> </table>
+      <button class="download">Download</button>
+    </section>
+
+    <script src="./dist/csvwriter.min.js"></script>
+    <script>
+      // Create data
+      const header = [
+        "Company",
+        "Contact",
+        "Country"
+      ];
+
+      const rows = [
+        [
+          "AlfredsFutterkiste",
+          "MariaAnders",
+          "Germany",
+        ],
+        [
+          "CentrocomercialMoctezuma",
+          "FranciscoChang",
+          "Mexico",
+        ],
+        [
+          "ErnstHandel",
+          "RolandMendel",
+          "Austria",
+        ],
+        [
+          "IslandTrading",
+          "HelenBennett",
+          "UK",
+        ],
+        [
+          "LaughingBacchusWinecellars",
+          "YoshiTannamuri",
+          "Canada",
+        ],
+        [
+          "MagazziniAlimentariRiuniti",
+          "GiovanniRovelli",
+          "Italy",
+        ]
+      ];
+
+      const table = document.querySelector("table");
+      let tr = document.createElement("tr");
+
+      // Populate table header
+      for (const el of header) {
+        const th = document.createElement("th");
+        th.innerHTML = el;
+        tr.appendChild(th);
+      }
+
+      table.appendChild(tr);
+
+      // Populate table content
+      for (const row of rows) {
+        tr = document.createElement("tr")
+        for (const el of row) {
+          let td = document.createElement("td");
+          td.innerHTML = el;
+          tr.appendChild(td);
+        }
+        table.appendChild(tr);
+      }
+
+
+      // Craete instance
+      const csvwriter = new CsvWriter(header, rows);
+
+      // Download Button event listener
+      const downloadBtn = document.querySelector(".download");
+      downloadBtn.addEventListener("click", async () => {
+        await csvwriter.anchorElement("example-table-data");
+      });
+    </script>
+  </body>
+
+</html>
