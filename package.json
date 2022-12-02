@@ -1,7 +1,7 @@
 {
-  "name": "csvwriter",
+  "name": "csvwritergen",
   "version": "0.0.1",
-  "description": "Simple & customizable csvwriter browser downloader generator JS",
+  "description": "Simple csvwriter browser downloader generator JS",
   "amdName": "CsvWriter",
   "exports": {
     "default": "./dist/csvwriter.min.js"
