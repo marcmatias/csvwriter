@@ -43,7 +43,7 @@ Or directly in the HTML file
 <script src="./dist/csvwritergen.js"></script>
 
 <!-- or directly from unpkg -->
-<script src="https://unpkg.com/csvwritergen@latest/dist/csvwritergen.min.js"></script>
+<script src="https://unpkg.com/csvwritergen@latest/dist/csvwritergen.js"></script>
 ```
 
 ## Run

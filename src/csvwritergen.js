@@ -4,7 +4,7 @@
  * @param  {Array} header - Array with header values
  * @param {Array} rows - Array with rows values
  */
-export class CsvWriter {
+export class CsvWriterGen {
   constructor(header, rows = []) {
     this.header = header;
     this.rows = rows;

@@ -1,24 +1,24 @@
 {
   "name": "csvwritergen",
-  "version": "0.0.1",
-  "description": "Simple csvwriter browser downloader generator JS",
-  "amdName": "CsvWriter",
-  "exports": {
-    "default": "./dist/csvwriter.min.js"
-  },
+  "private": true,
+  "version": "0.0.4",
+  "type": "module",
+  "main": "dist/csvwritergen.js",
   "scripts": {
-    "build": "microbundle -o dist/csvwriter.min.js -f umd --sourcemap false --no-pkg-main",
-    "eslint": "eslint 'src/*.js'",
-    "prettier": "prettier --write .",
-    "watch": "yarn run build watch"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "prettier": "prettier --write ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marcmatias/csvwriter.git"
   },
   "files": [
-    "dist/csvwriter.min.js",
-    "README.md"
+    "dist/csvwriter.js",
+    "README.md",
+    "LICENSE"
   ],
   "keywords": [
     "csv",
@@ -32,11 +32,6 @@
   },
   "homepage": "https://github.com/marcmatias/csvwriter#readme",
   "devDependencies": {
-    "eslint": "^8.23.0",
-    "eslint-config-prettier": "^8.5.0",
-    "lite-server": "^2.6.1",
-    "microbundle": "^0.15.1",
-    "prettier": "^2.7.1"
-  },
-  "dependencies": {}
+    "vite": "^4.3.2"
+  }
 }

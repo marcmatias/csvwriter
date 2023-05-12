@@ -40,8 +40,8 @@
       <button class="download">Download</button>
     </section>
 
-    <script src="https://unpkg.com/csvwritergen@latest/dist/csvwritergen.min.js"></script>
-    <script>
+    <script type="module">
+      import { CsvWriterGen } from "./src/csvwritergen.js";
       // Create data
       const header = [
         "Company",
@@ -106,8 +106,8 @@
       }
 
 
-      // Craete instance
-      const csvwriter = new CsvWriter(header, rows);
+      // Create instance
+      const csvwriter = new CsvWriterGen(header, rows);
 
       // Download Button event listener
       const downloadBtn = document.querySelector(".download");
